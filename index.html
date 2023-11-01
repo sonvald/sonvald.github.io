@@ -15,11 +15,11 @@
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
     <script>
         let tg = window.Telegram.WebApp;
-        let send = document.getElementById("user_code");
+        let send = document.getElementById("send");
         tg.expand();
 
         send.addEventListener("click", () =>{
-            let code = document.getElementById("send").value;
+            let code = document.getElementById("user_code").value;
             let data ={
             code: code
             }
