@@ -16,8 +16,14 @@
     <script>
         let tg = window.Telegram.WebApp;
         let send = document.getElementById("send");
+        tg.expand();
 
         send.addEventListener("click", () =>{
+            let code = document.getElementById("send").value;
+            let data ={
+            code: code
+            }
+            tg.sendData(JSON.stringify(data));
             tg.close();
         })
     </script>
