@@ -46,15 +46,27 @@
     </style>
 </head>
 <body>
-<div class="Myform">
-            <h1>Авторизация телеграм</h1>
-            <div class="inp">
-                        <form name="regisrration" action="/" method="POST">
-                                    <input class="pass" type="password" required value="" name="password">
-                                   <input class="btn" type="submit" value="Отправить">
-                        </form>
-            </div>
-</div>
-
+<div id="main">
+        <h1>Регистрация</h1>
+    </div>
+    <form id="form">
+        <input type='text' placeholder="Код" id="user_code">
+        <button id="send">Отправить</button>
+    </form>
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <script>
+        let tg = window.Telegram.WebApp;
+        let send = document.getElementById("send");
+        tg.expand();
+        
+        send.addEventListener("click", () =>{
+            let code = document.getElementById("user_code").value;
+            let data ={
+            code: code
+            }
+            tg.sendData(JSON.stringify(data));
+            tg.close();
+        })
+    </script>
 </body>
 </html>
