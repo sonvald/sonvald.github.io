@@ -4,24 +4,28 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
+
         body {
+         font-family: 'Open Sans', sans-serif;
             color: #000000;
             background-color: #D3D3D3;
         }
         h1{
 			color: #000000;
-			margin: 20px auto 0;
+			  margin-left: 655px;
+      	     margin-top: 5px;
 			width: 200px;
-			text-align: center;
+
 		}
         button {
             border: 30px;
             border-radius: 5px;
-   	    margin-left: 500px;
-      	 margin-right: 500px;
+            margin-left: 630px;
+      	     margin-top: 30px;
             height: 90px;
             width: 250px;
-            font-size: 20px;
+            font-size: 25px;
             font-weight: 500;
             cursor: pointer;
             transition: all 500ms ease;
@@ -31,16 +35,17 @@
 	input {
             border: 10px;
             border-radius: 5px;
-            margin-left: 500px;
-            margin-right: 500px;
-            height: 75px;
-            width: 250px;
+            margin-left: 630px;
+      	    margin-top: 30px;
+            height: 40px;
+            width: 245px;
             font-size: 20px;
             font-weight: 250;
             cursor: pointer;
             transition: all 500ms ease;
             color: #000000;
         }
+
     </style>
 </head>
 <body>
@@ -49,6 +54,7 @@
     </div>
     <form id="form">
         <input type='text' placeholder="Код" id="user_code">
+        <br />
         <button id="send">Отправить</button>
     </form>
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
