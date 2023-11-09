@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="UTF-8">
     <title>Title</title>
     <style>
@@ -15,8 +16,8 @@
         }
         h1{
 			color: #fcfbf9;
-			  margin-left: 650px;
-      	     margin-top: 5px;
+			margin-left: 650px;
+      	    margin-top: 5px;
 			width: 200px;
 
 		}
@@ -36,7 +37,7 @@
             color: #000000;
             background-color: #808080;
         }
-	input {
+	    input {
             font-family: 'Rubik', sans-serif;
             border: 10px;
             border-radius: 5px;
@@ -51,17 +52,72 @@
             color: #000000;
         }
 
+     @media screen and (max-width: 576px){
+     @import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
+
+        body {
+
+        font-family: 'Rubik', sans-serif;
+            color: #000000;
+            background-color: #333333;
+        }
+        h1{
+			color: #fcfbf9;
+			margin-left: 75px;
+      	    margin-top: 50px;
+			width: 200px;
+
+		}
+        button {
+
+            font-family: 'Rubik', sans-serif;
+            border: 30px;
+            border-radius: 5px;
+            margin-left: 50px;
+      	     margin-top: 10;
+            height: 90px;
+            width: 250px;
+            font-size: 25px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 500ms ease;
+            color: #000000;
+            background-color: #808080;
+        }
+     h2{
+            margin-left: 650px;
+      	    margin-top: 0px;
+            height: 40px;
+            width: 245px;
+            cursor: pointer;
+     }
+	input {
+            font-family: 'Rubik', sans-serif;
+            border: 10px;
+            border-radius: 5px;
+            margin-left: 50px;
+      	    margin-top: 0px;
+            height: 40px;
+            width: 245px;
+            font-size: 20px;
+            font-weight: 250;
+            cursor: pointer;
+            transition: all 500ms ease;
+            color: #000000;
+        }
+    }
     </style>
 </head>
 <body>
     <div id="main">
-        <h1>Регистрация</h1>
+        <h1>Введите код</h1>
     </div>
-    <form id="form">
-        <input type='text' placeholder="Код" id="user_code">
-        <br />
-        <button id="send">Отправить</button>
-    </form>
+<!--    <form id="form">-->
+    <h2></h2>
+    <input type='text' placeholder="Код" id="user_code">
+    <br />
+    <button id="send">Отправить</button>
+<!--    </form>-->
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
     <script>
         let tg = window.Telegram.WebApp;
