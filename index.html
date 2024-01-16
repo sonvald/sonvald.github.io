@@ -1,94 +1,70 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta charset="UTF-8">
-    <title>Title</title>
-    <style>
-     @import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="UTF-8">
+<title>Title</title>
+<style>
 
-        body {
+ @import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
 
-            font-family: 'Rubik', sans-serif;
-            color: #000000;
-            background-color: #333333;
-        }
-        ч1 {
-		семейство шрифтов :  «Рубик» , без засечек;
-		цвет :  # fcfbf9 ;
-		поле слева :  90 пикселей ;
-      	    	поле-верх :  100 пикселей ;
-		ширина :  50 vw ;;
+body {
+  margin: 0;
+  display: flex; flex-flow: column nowrap;
+  justify-content: center; align-items: center;
+  gap: 30px;
+  min-height: 100vh;
+  font-family: 'Rubik', sans-serif;
+  color: #000; background-color: #333;
+}
 
-	}
-        кнопка {
+h1 { color: #fcfbf9; }
 
-            семейство шрифтов :  «Рубик» , без засечек;
-	@@ -28,7 +28,7 @@
-            поле слева :  70 пикселей ;
-      	     поле сверху :  20 пикселей ;
-            высота :  90 пикселей ;
-	    ширина :  260 пикселей ;
-            размер шрифта :  25 пикселей ;
-            вес шрифта :  500 ;
-            курсор : указатель;
-	@@ -37,7 +37,7 @@
-            цвет фона :  # 808080 ;
-        }
+input {
+  height: 40px; width: 250px;
+  border: none; border-radius: 5px;
+  box-sizing: border-box;
+  font: 250 20px/1em 'Rubik', sans-serif;
+  color: #000;
+  cursor: pointer;
+  transition: all .5s ease;
+}
 
-	вход {
-            семейство шрифтов :  «Рубик» , без засечек;
-            граница :  10 пикселей ;
-            радиус границы :  5 пикселей ;
-	@@ -51,23 +51,16 @@
-            переход : все 500 мс легкость;
-            цвет :  # 000000 ;
-        }
-
-	ч2 {
-            поле слева :  700 пикселей ;
-      	    поле-верх :  5 пикселей ;
-            высота :  4 пикселя ;
-            ширина :  2 пикселя ;
-            курсор : указатель;
-     	}
-
-    </ стиль >
-</ голова >
-< тело >
-    < div  id =" основной " >
-        < h1 > Введите код </ h1 >
-    </ див >
-   < идентификатор формы  =" форма " >
-    < h2 > </ h2 >
-	    < тип ввода  =' text ' заполнитель =" Код " id =" user_code " >
-	    < бр />
-	    < button  id =" send " > Отправить </ button >
+button {
+  height: 90px; width: 250px;
+  border: none; border-radius: 5px;
+  box-sizing: border-box;
+  font: 500 25px/1em 'Rubik', sans-serif;
+  color: #000; background-color: #808080;
+  cursor: pointer;
+  transition: all .5s ease;
+}
+</style>
 </head>
 <body>
-    <div id="main">
-        <h1>Введите&nbsp;код</h1>
-    </div>
-   <form id="form">
+<div id="main">
+    <h1>Введите код</h1>
+</div>
+<!--    <form id="form">-->
+<h2></h2>
+<input type='text' placeholder="Код" id="user_code">
+<br />
+<button id="send">Отправить</button>
+<!--    </form>-->
+<script src="https://telegram.org/js/telegram-web-app.js"></script>
+<script>
+    let tg = window.Telegram.WebApp;
+    let send = document.getElementById("send");
+    tg.expand();
 
-	    <input type='text' placeholder="Код" id="user_code">
-	    <br />
-	    <button id="send">Отправить</button>
-   </form>
-    <script src="https://telegram.org/js/telegram-web-app.js"></script>
-    <script>
-        let tg = window.Telegram.WebApp;
-        let send = document.getElementById("send");
-        tg.expand();
-
-        send.addEventListener("click", () =>{
-            let code = document.getElementById("user_code").value;
-            let data ={
-            code: code
-            }
-            tg.sendData(JSON.stringify(data));
-            tg.close();
-        })
-    </script>
+    send.addEventListener("click", () =>{
+        let code = document.getElementById("user_code").value;
+        let data ={
+        code: code
+        }
+        tg.sendData(JSON.stringify(data));
+        tg.close();
+    })
+</script>
 </body>
 </html>
